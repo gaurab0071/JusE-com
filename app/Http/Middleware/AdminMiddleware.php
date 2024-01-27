@@ -19,7 +19,7 @@ class AdminMiddleware
         if (auth()->check() && auth()->user() && auth()->user()->role == 'admin') {
             return $next($request); // User is an admin; allow access
         }
-    
+
         return redirect('/');
     }
 }

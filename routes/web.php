@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
@@ -29,7 +30,7 @@ Route::get('/checkout',[PageController::class,'checkout']);
 Route::get('/product_detail/{id}',[PageController::class,'product_detail']);
 
 
-Route::get('/cart',[PageController::class,'cart']);
+Route::post('/cart',[PageController::class,'cart']);
 
 Route::get('/backend/home', function () {
     return view('backend.home');
@@ -45,7 +46,7 @@ Route::resource('/backend/category',CategoryController::class);
 
 
 
-
+// Route::resource('/frontend/cart',CartController::class);
 Route::resource('/backend/products',ProductController::class);
 Route::get('/product/{id}/edit',[ProductController::class,'edit']);
 Route::get('/product/{id}/update',[ProductController::class,'update']);

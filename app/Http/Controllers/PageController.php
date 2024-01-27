@@ -26,7 +26,8 @@ class PageController extends Controller
     //About page kholne function
     public function checkout()
     {
-        return view('frontend.checkout');
+        $categories = Category::all();
+        return view('frontend.checkout', compact('categories'));
     }
 
 
@@ -52,13 +53,22 @@ class PageController extends Controller
 
     public function cart(Request $request)
     {
-        return view('frontend.cart');
+        $cart = new Cart();
+        $cart->product_id = $request->product_id;
+        $cart->qty = $request->qty;
+        $cart->selling_price = $request->selling_price;
+        $cart->amount = $request->qty * $request->selling_price;
+        $cart->user_id = Auth::user()->id;
+        $cart->save();
+        toast("Item added to cart successfully", 'success');
+        return redirect()->back();
     }
 
     public function shop()
     {
+        $categories = Category::all();
         $product = Product::all();
-        return view('frontend.shop', compact('product'));
+        return view('frontend.shop', compact('product','categories'));
     }
 
     public function cartDelete($id)

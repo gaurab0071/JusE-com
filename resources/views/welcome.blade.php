@@ -171,8 +171,6 @@
 <div class="container-fluid pt-5 pb-3">
     <div class="row px-xl-5">
         @foreach ($images as $item)
-
-        @endforeach
         <div class="col-md-6">
             <div class="product-offer mb-30" style="height: 300px;">
                 <img class="img-fluid" src="{{ asset ($item->offer_image1) }}" alt="">
@@ -193,8 +191,10 @@
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
+
 <!-- Offer End -->
 
 

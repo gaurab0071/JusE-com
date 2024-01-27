@@ -50,17 +50,17 @@ class CategoryController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-{
-    $categories = Category::find($id);
+    {
+        $categories = Category::find($id);
 
-    if ($categories) {
-        $products = $categories->products;
-        return view('frontend.category', compact('categories', 'products'));
-    } else {
-        // Handle the case when the category is not found
-        return redirect()->route('welcome')->with('error', 'Category not found.');
+        if ($categories) {
+            $products = $categories->products;
+            return view('frontend.category', compact('categories', 'products'));
+        } else {
+            // Handle the case when the category is not found
+            return redirect()->route('welcome')->with('error', 'Category not found.');
+        }
     }
-}
 
 
     /**
@@ -79,7 +79,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->name = $request->name;
-        $category->uodate();
+        $category->update();
         toast("Record Updated Successfully", "success");
         return redirect("/backend/category");
     }

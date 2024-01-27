@@ -64,7 +64,7 @@
                                                 $description = $item->description;
                                                 $wordCount = str_word_count($description);
                                             @endphp
-                                        
+
                                             @if ($wordCount >20)
                                                 <span class="short-description">{{ Str::words($description, 20) }}</span>
                                                 <span class="full-description" style="display: none;">{{ Str::words($description, $wordCount) }}</span>
@@ -111,6 +111,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Delete Confirmation Modal -->
                                     @endforeach
                                 </tbody>
                             </table>

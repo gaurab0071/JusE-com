@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
+
         $role = Auth::user()->role;
         if($role == 'admin'){
             return view('backend.home');
@@ -42,6 +42,6 @@ class HomeController extends Controller
     {
         return view('frontend.dashboard');
     }
-    
-    
+
+
 }

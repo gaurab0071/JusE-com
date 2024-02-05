@@ -28,9 +28,9 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="{{ url('/') }}" class="nav-item nav-link{{ Request::is('/') ? ' active' : '' }}">Home</a>
-                        <a href="{{ url('/shop') }}" class="nav-item nav-link{{ Request::is('/shop') ? ' active' : '' }}">Shop</a>
-                        <a href="{{ url('/cart') }}" class="nav-item nav-link{{ Request::is('/cart') ? ' active' : '' }}">My Cart</a>
-                        <a href="{{ url('/checkout') }}" class="nav-item nav-link{{ Request::is('/checkout') ? ' active' : '' }}">Checkout</a>
+                        <a href="{{ url('/shop') }}" class="nav-item nav-link{{ Request::is('shop') ? ' active' : '' }}">Shop</a>
+                        <a href="{{ url('/cart') }}" class="nav-item nav-link{{ Request::is('cart') ? ' active' : '' }}">My Cart</a>
+                        <a href="{{ url('/checkout') }}" class="nav-item nav-link{{ Request::is('checkout') ? ' active' : '' }}">Checkout</a>
                         <a href="/frontend/contact" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
@@ -40,7 +40,7 @@
                         </a>
                         <a href="/cart" class="btn px-0 ml-3">
                             <i class="fas fa-shopping-cart text-primary"></i>
-                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">1</span>
                         </a>
                     </div>
                 </div>

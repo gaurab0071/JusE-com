@@ -19,6 +19,7 @@ class PageController extends Controller
         $categories = Category::all();
         $featuredProduct = Product::orderBy('id', 'desc')->limit(4)->get();
         $recentProduct = Product::orderBy('id', 'desc')->where('category_id', 1)->limit(4)->get();
+        // $totalCartItem = Cart::Where('user_id',Auth::user()->id)->count();
         $images = Image::all();
         return view('welcome', compact('images', 'featuredProduct', 'recentProduct','categories'));
     }
@@ -27,7 +28,11 @@ class PageController extends Controller
     public function checkout()
     {
         $categories = Category::all();
-        return view('frontend.checkout', compact('categories'));
+        $cartItems = Cart::where('user_id', Auth::user()->id)->get();
+        $subtotal = $cartItems->sum('amount');
+            $shippingCharge = 150;
+            $total = $subtotal + $shippingCharge;
+        return view('frontend.checkout', compact('categories','cartItems', 'subtotal', 'shippingCharge','total'));
     }
 
 
@@ -62,6 +67,23 @@ class PageController extends Controller
         $cart->save();
         toast("Item added to cart successfully", 'success');
         return redirect()->back();
+    }
+
+    public function cartItems()
+    {
+        if (Auth::user()) {
+            $categories = Category::all();
+            $cartItems = Cart::where('user_id', Auth::user()->id)->get();
+            $totalCartItem = $cartItems->count(); // Move this line up
+    
+            $subtotal = $cartItems->sum('amount');
+            $shippingCharge = 150;
+            $total = $subtotal + $shippingCharge;
+    
+            return view('frontend.cart', compact('totalCartItem', 'cartItems', 'categories', 'subtotal','shippingCharge', 'total'));
+        } else {
+            return redirect('/login');
+        }
     }
 
     public function shop()

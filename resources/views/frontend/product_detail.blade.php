@@ -114,37 +114,24 @@
                                         <i class="fa fa-minus"></i>
                                     </button>
                                 </div>
-                                <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
+                                <input type="text" class="form-control bg-secondary border-0 text-center" value="1" min="1" name="qty">
                                 <div class="input-group-btn">
                                     <button class="btn btn-primary btn-plus">
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 </div>
                             </div>
+                            <input id="product_id" class="form-control" type="number" name="product_id" value="{{$product->id}}" hidden>
+                            <input id="selling_price" class="form-control" type="number" name="selling_price" value="{{$product->selling_price}}" hidden>
+                            @if (Auth::user())
                             <button class="btn btn-primary px-3" id="addToCartBtn"><i class="fa fa-shopping-cart mr-1"></i>
                                 Add To
                                 Cart</button>
+                            @else
+                                <a href="/login" class="btn btn-primary px-3" id="addToCartBtn"><i class="fa fa-shopping-cart mr-1"></i>Add To Cart</a>
+                            @endif
+                            
                     </form>
-                    <!-- The Modal -->
-                    <div class="modal fade" id="addToCartBtn" tabindex="-1" role="dialog"
-                        aria-labelledby="addToCartBtn" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="addToCartBtn">Item Added to Cart</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Your item has been added to the cart successfully.</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="d-flex pt-2">
                     <strong class="text-dark mr-2">Share on:</strong>

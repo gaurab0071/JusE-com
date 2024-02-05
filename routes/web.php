@@ -31,6 +31,7 @@ Route::get('/product_detail/{id}',[PageController::class,'product_detail']);
 
 
 Route::post('/cart',[PageController::class,'cart']);
+Route::get('/cart',[PageController::class,'cartItems']);
 
 Route::get('/backend/home', function () {
     return view('backend.home');

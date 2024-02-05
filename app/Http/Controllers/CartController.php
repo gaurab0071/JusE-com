@@ -31,6 +31,15 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $cart = new Cart();
+        $cart->product_id = $request->product_id;
+        $cart->qty = $request->qty;
+        $cart->selling_price = $request->selling_price;
+        $cart->amount = $request->qty * $request->selling_price;
+        $cart->user_id = Auth::user()->id;
+        $cart->save();
+        toast("Item added to cart successfully", 'success');
+        return redirect()->back();
+
         
     }
 

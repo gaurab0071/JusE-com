@@ -26,7 +26,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset ('/css/style.css')}}" rel="stylesheet">
 </head>
-
+<body>
 @include('frontend.layouts.header')
 @include('frontend.main')
 

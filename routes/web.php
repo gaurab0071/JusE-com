@@ -34,7 +34,7 @@ Route::post('/cart',[PageController::class,'cart']);
 Route::get('/cart',[PageController::class,'cartItems']);
 
 Route::get('/backend/home', function () {
-    return view('backend.home');
+    return view ('backend.home');
 })->middleware(['admin']);
 
 // Route::get('/category/{id}',[PageController::class,'category']);

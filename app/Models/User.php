@@ -21,6 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'mobile_number',
+        'delivery_address',
+        'city',
     ];
 
     /**
@@ -43,3 +46,4 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 }
+

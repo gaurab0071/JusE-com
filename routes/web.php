@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,17 +37,13 @@ Route::get('/backend/home', function () {
     return view ('backend.home');
 })->middleware(['admin']);
 
-// Route::get('/category/{id}',[PageController::class,'category']);
+
 Route::get('/category/{id}',[CategoryController::class,'show'])->name('show');
 
 
 Route::resource('/backend/category',CategoryController::class);
+Route::resource('order',OrderController::class);
 
-
-
-
-
-// Route::resource('/frontend/cart',CartController::class);
 Route::resource('/backend/products',ProductController::class);
 Route::get('/product/{id}/edit',[ProductController::class,'edit']);
 Route::get('/product/{id}/update',[ProductController::class,'update']);

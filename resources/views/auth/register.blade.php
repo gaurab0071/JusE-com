@@ -61,6 +61,30 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="mobile_number" class="col-md-4 col-form-label text-md-end">{{ __('Mobile Number') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="mobile_number" type="text" class="form-control" name="mobile_number" required autocomplete="mobile">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="delivery_address" class="col-md-4 col-form-label text-md-end">{{ __('Delivery Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="delivery_address" type="text" class="form-control" name="delivery_address" required autocomplete="address">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="city" class="col-md-4 col-form-label text-md-end">{{ __('City') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="city" type="text" class="form-control" name="city" required autocomplete="city">
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

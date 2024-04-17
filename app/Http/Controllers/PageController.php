@@ -75,11 +75,11 @@ class PageController extends Controller
             $categories = Category::all();
             $cartItems = Cart::where('user_id', Auth::user()->id)->get();
             $totalCartItem = $cartItems->count(); // Move this line up
-    
+
             $subtotal = $cartItems->sum('amount');
             $shippingCharge = 150;
             $total = $subtotal + $shippingCharge;
-    
+
             return view('frontend.cart', compact('totalCartItem', 'cartItems', 'categories', 'subtotal','shippingCharge', 'total'));
         } else {
             return redirect('/login');
@@ -101,4 +101,21 @@ class PageController extends Controller
     {
         return view('frontend.edit');
     }
+
+    // public function orders(Request $request){
+
+    //     $carts = Cart::where('user_id',Auth::user()->id)->get();
+
+    //     $subtotal = $carts->sum('amount');
+    //     $shippingCharge = 150;
+    //     $total = $subtotal + $shippingCharge;
+
+    //     $order = new Order();
+    //     $order->user_id = Auth::user()->id;
+    //     $order->mobile_number = $request->mobile_number;
+    //     $order->delivery_address = $request->delivery_address;
+    //     $order->city = $request->city;
+    //     $order->total = $total;
+    //     $order->save();
+    // }
 }

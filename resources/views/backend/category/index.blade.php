@@ -1,3 +1,4 @@
+@if(auth()->check())
 @extends('backend.layouts.app')
 @section('content')
 <div class="content-wrapper">
@@ -56,3 +57,7 @@
     </div>
 </div>
 @endsection
+@else
+<!-- Include the login view when the user is not logged in -->
+@include('auth.login')
+@endif

@@ -40,14 +40,15 @@
                         <div class="card bg-success">
                             <div class="card-body">
                                 <div class="inner">
-                                    <h3>30</h3>
-                                    <p>Students</p>
+                                    <h3>320</h3> <!-- Display the total number of orders -->
+                                    <p>Orders</p>
                                 </div>
-                                <a href="/student" class="small-box-footer text-light">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <a href="/orders" class="small-box-footer text-light">More info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
+                    
+                    
                     <div class="col-lg-3 col-6">
                         <div class="card bg-info">
                             <div class="card-body">

@@ -5,7 +5,7 @@
     <h2>Edit Profile</h2>
     <form>
         <div class="form-group">
-            <label for="name">Name:</label>
+            <label for="name">Full Name:</label>
             <input type="text" class="form-control" id="name" placeholder="Enter your name"
             value="{{ auth()->check() ? auth()->user()->name : '' }}">
         </div>
@@ -15,17 +15,19 @@
             value="{{ auth()->check() ? auth()->user()->email : '' }}">
         </div>
         <div class="form-group">
-            <label for="billingAddress">Billing Address:</label>
-            <textarea class="form-control" id="billingAddress" rows="4" placeholder="Enter your billing address"
-            value="{{ auth()->check() ? auth()->user()->delivery_address : '' }}"></textarea>
+            <label for="mobile_number">Mobile No:</label>
+            <input type="text" class="form-control" id="mobile_number" placeholder="Enter your phone number"
+            value="{{ auth()->check() ? auth()->user()->mobile_number : '' }}">
         </div>
         <div class="form-group">
-            <label for="phoneNumber">Phone Number:</label>
-            <input type="text" class="form-control" id="phoneNumber" placeholder="Enter your phone number">
+            <label for="delivery_address">Delivery Address:</label>
+            <textarea class="form-control" name="delivery_address" id="delivery_address" rows="4" placeholder="Enter your billing address"
+            value="{{ old('delivery_address', auth()->user()->delivery_address ?? '') }}"></textarea>
         </div>
         <div class="form-group">
             <label for="city">City:</label>
-            <input type="text" class="form-control" id="city" placeholder="Enter your city">
+            <input type="text" class="form-control" id="city" placeholder="Enter your city"
+            value="{{ auth()->check() ? auth()->user()->city : '' }}">
         </div>
         <button type="submit" class="btn btn-primary">Save Changes</button>
     </form>

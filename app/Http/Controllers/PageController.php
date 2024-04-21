@@ -24,16 +24,29 @@ class PageController extends Controller
         return view('welcome', compact('images', 'featuredProduct', 'recentProduct','categories'));
     }
 
-    //About page kholne function
+    //Checkout page
     public function checkout()
-    {
-        $categories = Category::all();
-        $cartItems = Cart::where('user_id', Auth::user()->id)->get();
-        $subtotal = $cartItems->sum('amount');
-            $shippingCharge = 150;
-            $total = $subtotal + $shippingCharge;
-        return view('frontend.checkout', compact('categories','cartItems', 'subtotal', 'shippingCharge','total'));
+{
+    // Check if user is authenticated
+    if (!Auth::check()) {
+        // If not authenticated, you can redirect the user or show an error message
+        return redirect()->route('login')->with('error', 'You need to login first to proceed with checkout.');
     }
+
+    $categories = Category::all();
+    
+    // Assuming there's a 'user_id' column in the 'carts' table
+    $cartItems = Cart::where('user_id', Auth::user()->id)->get();
+
+    $subtotal = $cartItems->sum('amount');
+    
+    $shippingCharge = 150;
+    
+    $total = $subtotal + $shippingCharge;
+
+    return view('frontend.checkout', compact('categories', 'cartItems', 'subtotal', 'shippingCharge', 'total'));
+}
+
 
 
     public function detail($id)
@@ -67,24 +80,29 @@ class PageController extends Controller
         $cart->save();
         toast("Item added to cart successfully", 'success');
         return redirect()->back();
+        
     }
 
     public function cartItems()
-    {
-        if (Auth::user()) {
-            $categories = Category::all();
-            $cartItems = Cart::where('user_id', Auth::user()->id)->get();
-            $totalCartItem = $cartItems->count(); // Move this line up
+{
+    $categories = Category::all();
+    $cartItems = [];
+    $totalCartItem = 0;
+    $subtotal = 0;
+    $shippingCharge = 150;
+    $total = 0;
 
-            $subtotal = $cartItems->sum('amount');
-            $shippingCharge = 150;
-            $total = $subtotal + $shippingCharge;
-
-            return view('frontend.cart', compact('totalCartItem', 'cartItems', 'categories', 'subtotal','shippingCharge', 'total'));
-        } else {
-            return redirect('/login');
-        }
+    if (Auth::user()) {
+        $cartItems = Cart::where('user_id', Auth::user()->id)->get();
+        $totalCartItem = $cartItems->count();
+        $subtotal = $cartItems->sum('amount');
+        $total = $subtotal + $shippingCharge;
     }
+
+    return view('frontend.cart', compact('totalCartItem', 'cartItems', 'categories', 'subtotal', 'shippingCharge', 'total'));
+    
+}
+
 
     public function shop()
     {
@@ -95,27 +113,14 @@ class PageController extends Controller
 
     public function cartDelete($id)
     {
+        $cart = Cart::find($id);
+        $cart->delete();
+        toast("Item deleted from cart successfully",'success');
+        return redirect()->back();
     }
 
     public function edit()
     {
         return view('frontend.edit');
     }
-
-    // public function orders(Request $request){
-
-    //     $carts = Cart::where('user_id',Auth::user()->id)->get();
-
-    //     $subtotal = $carts->sum('amount');
-    //     $shippingCharge = 150;
-    //     $total = $subtotal + $shippingCharge;
-
-    //     $order = new Order();
-    //     $order->user_id = Auth::user()->id;
-    //     $order->mobile_number = $request->mobile_number;
-    //     $order->delivery_address = $request->delivery_address;
-    //     $order->city = $request->city;
-    //     $order->total = $total;
-    //     $order->save();
-    // }
 }

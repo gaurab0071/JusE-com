@@ -6,7 +6,7 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1 class="m-0">Order Details</h1>
-                        {{-- <h5 class="card-title text-danger">Total Orders: {{ count($categories) }}</h5> --}}
+                        <h5 class="card-title text-danger">Total Orders: {{ count($orders) }}</h5>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -24,7 +24,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="/backend/category/create" class="btn btn-primary">Back</a>
+                            <h4 class="btn btn-primary">All Orders</h4>
                         </div>
                         <div class="card-body">
                             <table class="table">

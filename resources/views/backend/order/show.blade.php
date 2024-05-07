@@ -55,6 +55,11 @@
                                     @endforeach
 
                                     <tr>
+                                        <td colspan="4">Shipping Charge</td>
+                                        <td><span class="fs-4">Rs. 150</span></td>
+                                    </tr>
+
+                                    <tr>
                                         <td colspan="4">Grand Total</td>
                                         <td><span class="fs-4">{{ $order->total }}</span></td>
                                     </tr>

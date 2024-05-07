@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\File;
 use App\Models\Cart;
 use App\Models\Category;
-use App\Models\Order;
 use App\Models\image;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class PageController extends Controller
 {
@@ -63,10 +62,11 @@ class PageController extends Controller
 
     public function product_detail($id)
     {
-
+        $featuredProduct = Product::orderBy('id', 'desc')->limit(4)->get();
+        $recentProduct = Product::orderBy('id', 'desc')->where('category_id', 1)->limit(4)->get();
         $product = Product::find($id);
         $categories = Category::all();
-        return view('frontend.product_detail', compact('product', 'categories'));
+        return view('frontend.product_detail', compact('product', 'categories','recentProduct','featuredProduct'));
     }
 
     public function cart(Request $request)
@@ -121,6 +121,35 @@ class PageController extends Controller
 
     public function edit()
     {
-        return view('frontend.edit');
+        $categories = Category::all();
+        return view('frontend.profile', compact('categories'));
     }
+
+    public function update(Request $request, string $id)
+{
+    // Validate the incoming request
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255',
+        'mobile_number' => 'required|string|max:20',
+        'delivery_address' => 'nullable|string|max:255',
+        'city' => 'nullable|string|max:255',
+    ]);
+
+    // Find the user by ID
+    $user = User::find($id);
+
+    // Update the user's information
+    $user->name = $request->input('name');
+    $user->email = $request->input('email');
+    $user->mobile_number = $request->input('mobile_number');
+    $user->delivery_address = $request->input('delivery_address');
+    $user->city = $request->input('city');
+    $user->update();
+    toast(" Changes saved successfully",'success');
+
+    // Redirect back to the profile page with a success message
+    return redirect()->back();
+}
+
 }

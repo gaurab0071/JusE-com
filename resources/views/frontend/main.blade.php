@@ -1,4 +1,3 @@
-
 @section('content')
 <div class="content-wrapper">
     <div class="container mt-3">
@@ -27,7 +26,7 @@
                                         <div class="inner text-dark">
                                             <p>Edit Profile</p>
                                         </div>
-                                        <a href="/frontend/edit" class="small-box-footer text-info">More Info
+                                        <a href="/frontend/profile" class="small-box-footer text-info">More Info
                                             <i class="fas fa-arrow-circle-right"></i></a>
                                     </div>
                                 </div>

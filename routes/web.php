@@ -53,7 +53,11 @@ Route::delete('/backend/products/{id}/destroy', [ProductController::class, 'dest
 Route::resource('/backend/upload',ImageController::class);
 Route::get('/frontend/dashboard', [HomeController::class,'dashboard'])->name('frontend.dashboard');
 
-Route::get('/frontend/edit',[PageController::class,'edit']);
+Route::get('/frontend/profile',[PageController::class,'edit']);
+Route::put('/frontend/profile/{id}', [PageController::class, 'update'])->name('frontend.profile');
+
+
+
 
 Auth::routes();
 

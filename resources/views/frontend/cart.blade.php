@@ -87,7 +87,23 @@
                     </div>
                 </div>
             </div>
-            @endguest
+            @else
+            @if($cartItems->isEmpty())
+                <div class="col-lg-12">
+                    <div class="alert alert-warning" role="alert">
+                        Your cart is empty. Please add items to your cart.
+                    </div>
+                </div>
+            @else
+                <div class="col-lg-8 table-responsive mb-5">
+                    <!-- Cart table -->
+                </div>
+                <div class="col-lg-4">
+                    <!-- Cart summary -->
+                </div>
+            @endif
+        @endguest
+
 
             <!-- Display the cart table if the user is logged in -->
             @auth
@@ -154,7 +170,6 @@
                                 </div>
                             </div>
                             <!-- Delete Confirmation Modal -->
-                            
                         </tr>
                         @endforeach
                     </tbody>

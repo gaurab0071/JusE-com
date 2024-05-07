@@ -40,7 +40,8 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        return view('frontend.dashboard');
+        $categories = Category::all();
+        return view('frontend.dashboard', compact('categories'));
     }
 
 

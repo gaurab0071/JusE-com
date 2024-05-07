@@ -27,7 +27,9 @@
     <link href="{{ asset ('/css/style.css')}}" rel="stylesheet">
 </head>
 <body>
+    @include('sweetalert::alert')
 @include('frontend.layouts.header')
+@include('frontend.layouts.nav')
 @include('frontend.main')
 
 @yield('content')

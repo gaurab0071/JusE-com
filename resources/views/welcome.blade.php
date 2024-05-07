@@ -109,7 +109,7 @@
     <div class="row px-xl-5 pb-3">
         @foreach ($categories as $category)
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-            <a class="text-decoration-none" href="">
+            <a class="text-decoration-none" href="{{ route('show', $category->id) }}">
                 <div class="cat-item d-flex align-items-center mb-4">
                     <div class="d-flex align-items-center justify-content-center overflow-hidden" style="width: 100px; height: 80px;">
                         <img class="img-fluid" src="{{ asset ($category->image) }}" alt="">
@@ -215,7 +215,7 @@
                     </div>
                 </div>
                 <div class="text-center py-4">
-                    <a class="h6 text-decoration-none text-truncate" href="">{{$item->name}}</a>
+                    <a class="h6 text-decoration-none text-truncate" href="/product_detail/{id}">{{$item->name}}</a>
                     <div class="d-flex align-items-center justify-content-center mt-2">
                         <h5>Rs.{{$item->selling_price}}</h5>
                         @if ($item->discount_percent>0)

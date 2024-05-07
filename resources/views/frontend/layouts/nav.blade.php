@@ -18,9 +18,8 @@
         </div>
         <div class="col-lg-9">
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
-                <a href="" class="text-decoration-none d-block d-lg-none">
-                    <span class="h1 text-uppercase text-dark bg-light px-2">Alisha</span>
-                    <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Store</span>
+                <a href="/" class="text-decoration-none d-block d-lg-none">
+                    <img src="{{ asset('images/sisterlogo.png') }}" alt="Alisha Store Logo" width="50" height="50">
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -33,6 +32,9 @@
                         <a href="{{ url('/checkout') }}" class="nav-item nav-link{{ Request::is('checkout') ? ' active' : '' }}">Checkout</a>
                         <a href="/frontend/contact" class="nav-item nav-link">Contact</a>
                     </div>
+                    
+
+                    
                     <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                         <a href="" class="btn px-0">
                             <i class="fas fa-heart text-primary"></i>
@@ -49,3 +51,7 @@
     </div>
 </div>
 <!-- Navbar End -->
+
+<script>
+
+</script>

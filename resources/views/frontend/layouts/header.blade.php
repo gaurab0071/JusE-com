@@ -1,8 +1,22 @@
 <!-- Topbar Start -->
 <div class="container-fluid">
     <div class="row bg-secondary py-1 px-xl-5">
+        <div class="header-auth-links ml-auto py-1 py-lg-0 pr-3 d-lg-none">
+                <a href="{{ auth()->check() ? route('frontend.dashboard') : '/dashboard' }}">
+                    @auth
+                        Hello, {{ auth()->user()->name }} | <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    @else
+                        <a href="{{ route('register') }}">Sign Up</a> | <a href="{{ route('login') }}">Log In</a>
+                    @endauth
+                </a>
+            </div>
+        </div>
         <div class="col-lg-6 d-none d-lg-block">
-            <div class="d-inline-flex align-items-center h-100">
+            <div class="d-inline-flex align-items-center h-10">
                 <a class="text-body mr-3" href="">About</a>
                 <a class="text-body mr-3" href="">Contact</a>
                 <a class="text-body mr-3" href="">Help</a>
@@ -18,7 +32,7 @@
                 <img src="{{ asset('images/sisterlogo.png') }}" alt="Alisha Store Logo" width="80" height="80">
             </a>
         </div>
-        
+
         <div class="col-lg-4 col-6 text-left">
             <form action="">
                 <div class="input-group">
@@ -34,7 +48,8 @@
         <div class="col-lg-4 col-6 text-right m-0">
             <a href="{{ auth()->check() ? route('frontend.dashboard') : '/dashboard' }}">
                 @auth
-                    Hello, {{ auth()->user()->name }} | <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                    Hello, {{ auth()->user()->name }} | <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
@@ -43,10 +58,7 @@
                 @endauth
             </a>
         </div>
-        
+
     </div>
 </div>
 <!-- Topbar End -->
-
-
-

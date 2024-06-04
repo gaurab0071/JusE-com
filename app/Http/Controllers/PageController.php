@@ -102,7 +102,12 @@ class PageController extends Controller
     return view('frontend.cart', compact('totalCartItem', 'cartItems', 'categories', 'subtotal', 'shippingCharge', 'total'));
     
 }
+    public function ShowCart(){
 
+        $cartItems = auth()->user()->cartItems;
+        return view('frontend.layouts.nav', compact('cartItems'));
+        
+    }
 
     public function shop()
     {

@@ -9,7 +9,7 @@
                         <h4>My Account</h4>
                     </div>
                     <ul class="list-group">
-                        <li class="list-group"><a href="">Edit My Details</a></li>
+                        <li class="list-group"><a href="/frontend/profile">Edit My Details</a></li>
                         <li class="list-group"><a href="">My Payments</a></li>
                     </ul>
                 </div>

@@ -21,7 +21,7 @@
         <!-- Shop Sidebar Start -->
         <div class="col-lg-3 col-md-4">
             <!-- Price Start -->
-            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by Category</span></h5>
+            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter</span></h5>
             <div class="bg-light p-4 mb-30">
 
                 <form>
@@ -61,7 +61,7 @@
             <!-- Price End -->
 
             <!-- Color Start -->
-            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by color</span></h5>
+            {{-- <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by color</span></h5>
             <div class="bg-light p-4 mb-30">
                 <form>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -95,11 +95,11 @@
                         <span class="badge border font-weight-normal">168</span>
                     </div>
                 </form>
-            </div>
+            </div> --}}
             <!-- Color End -->
 
             <!-- Size Start -->
-            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by size</span></h5>
+            {{-- <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by size</span></h5>
             <div class="bg-light p-4 mb-30">
                 <form>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -133,7 +133,7 @@
                         <span class="badge border font-weight-normal">168</span>
                     </div>
                 </form>
-            </div>
+            </div> --}}
             <!-- Size End -->
         </div>
         <!-- Shop Sidebar End -->
@@ -173,13 +173,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                     <div class="product-item bg-light mb-4">
                         <div class="product-img position-relative overflow-hidden">
-                            <img class="w-100" src="{{ asset($item->image) }}" height="300" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                            </div>
+                            <a href="/product_detail/{{$item->id}}"><img class="w-100" src="{{ asset($item->image) }}" height="300" alt=""></a>
                         </div>
                         <div class="text-center py-4">
                             <a class="h6 text-decoration-none text-truncate" href="/product_detail/{{$item->id}}">{{$item->name}}</a>

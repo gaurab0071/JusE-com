@@ -21,7 +21,7 @@
         <!-- Shop Sidebar Start -->
         <div class="col-lg-3 col-md-4">
             <!-- Price Start -->
-            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by Category</span></h5>
+            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter</span></h5>
             <div class="bg-light p-4 mb-30">
 
                 <form>
@@ -173,7 +173,11 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                     <div class="product-item bg-light mb-4">
                         <div class="product-img position-relative overflow-hidden">
+<<<<<<< HEAD
                             <a href="/product_detail/{{$item->id}}"><img class="w-100" src="{{ asset($item->image) }}" height="300" alt="">
+=======
+                            <a href="/product_detail/{{$item->id}}"><img class="w-100" src="{{ asset($item->image) }}" height="300" alt=""></a>
+>>>>>>> 9be8573633f51f8efc5c95b0e7a40654dc4b0c04
                         </div>
                         <div class="text-center py-4">
                             <a class="h6 text-decoration-none text-truncate" href="/product_detail/{{$item->id}}">{{$item->name}}</a>

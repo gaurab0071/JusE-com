@@ -2,7 +2,11 @@
 @extends('frontend.dashboard')
 @section('content')
 <div class="container mt-2">
+<<<<<<< HEAD
     <a href="/frontend/dashboard" type="submit" class="btn btn-primary">Back</a>
+=======
+    <a href="/frontend/main"  class="btn btn-primary">Back</a>
+>>>>>>> 9be8573633f51f8efc5c95b0e7a40654dc4b0c04
     <h2>Edit Profile</h2>
     <form method="POST" action="{{ route('frontend.profile', ['id' => auth()->user()->id]) }}">
         @csrf

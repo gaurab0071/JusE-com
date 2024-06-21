@@ -40,9 +40,13 @@
                         </a>
                         <a href="/cart" class="btn px-0 ml-3">
                             <i class="fas fa-shopping-cart text-primary"></i>
+<<<<<<< HEAD
                             <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
                                 {{ $totalCartItem ?? 0 }}
                             </span>
+=======
+                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+>>>>>>> 9be8573633f51f8efc5c95b0e7a40654dc4b0c04
                         </a>
                     </div>
                 </div>

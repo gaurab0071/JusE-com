@@ -130,10 +130,9 @@
                             <input id="selling_price" class="form-control" type="number" name="selling_price"
                                 value="{{ $product->selling_price }}" hidden>
                             @if (Auth::user())
-                                <button class="btn btn-primary px-3" id="addToCartBtn"><i
-                                        class="fa fa-shopping-cart mr-1"></i>
-                                    Add To
-                                    Cart</button>
+                            <button class="btn btn-primary px-3" id="addToCartBtn"><i class="fa fa-shopping-cart mr-1"></i>
+                                Add To
+                                Cart</button>
                             @else
                                 <a href="/login" class="btn btn-primary px-3" id="addToCartBtn"><i
                                         class="fa fa-shopping-cart mr-1"></i>Add To Cart</a>

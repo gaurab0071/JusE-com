@@ -21,6 +21,7 @@
     <!-- Libraries Stylesheet -->
     <link href="{{ asset ('/lib/animate/animate.min.css')}}" rel="stylesheet">
     <link href="{{ asset ('/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset ('/css/style.css')}}" rel="stylesheet">
@@ -49,6 +50,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 <script src="lib/easing/easing.min.js"></script>
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
 
 <!-- Contact Javascript File -->
 <script src="/mail/jqBootstrapValidation.min.js"></script>

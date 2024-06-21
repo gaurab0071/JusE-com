@@ -131,27 +131,42 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 
                 <!---------------------------------Payments------------------------------------>
                 {{-- <div class="mb-5">
+=======
+                <div class="mb-5">
+>>>>>>> 9be8573633f51f8efc5c95b0e7a40654dc4b0c04
                     <h5 class="section-title position-relative text-uppercase mb-3"><span
                             class="bg-secondary pr-3">Payment</span></h5>
                     <div class="bg-light p-30">
                         <div class="form-group">
                             <div class="custom-control custom-radio">
+<<<<<<< HEAD
                                 <input type="radio" class="custom-control-input" name="payment" id="esewa">
                                 <label class="custom-control-label" for="esewa">Esewa</label>
+=======
+                                <input type="radio" class="custom-control-input" name="payment" id="paypal">
+                                <label class="custom-control-label" for="paypal">E-sewa</label>
+>>>>>>> 9be8573633f51f8efc5c95b0e7a40654dc4b0c04
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="custom-control custom-radio">
+<<<<<<< HEAD
                                 <input type="radio" class="custom-control-input" name="payment" id="khalti">
                                 <label class="custom-control-label" for="khalti">Khalti</label>
+=======
+                                <input type="radio" class="custom-control-input" name="payment" id="directcheck">
+                                <label class="custom-control-label" for="directcheck">Khalti</label>
+>>>>>>> 9be8573633f51f8efc5c95b0e7a40654dc4b0c04
                             </div>
                         </div>
                         <div class="form-group mb-4">
                             <div class="custom-control custom-radio">
                                 <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
+<<<<<<< HEAD
                                 <label class="custom-control-label" for="cod">Cash On Delivery</label>
                             </div>
                         </div>
@@ -160,6 +175,15 @@
                             <button type="button" class="btn btn-primary" id="uploadScreenshotButton">Upload Screenshot</button>
                             
                         </div>
+=======
+                                <label class="custom-control-label" for="banktransfer">Cash On Delivery</label>
+                            </div>
+                        </div>
+                </div> 
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+>>>>>>> 9be8573633f51f8efc5c95b0e7a40654dc4b0c04
                     </div>
                 </div> --}}
                     <!---------------------------------Payments end------------------------------------>

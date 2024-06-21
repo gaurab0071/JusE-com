@@ -6,6 +6,7 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -56,7 +57,7 @@ Route::get('/frontend/dashboard', [HomeController::class,'dashboard'])->name('fr
 Route::get('/frontend/profile',[PageController::class,'edit']);
 Route::put('/frontend/profile/{id}', [PageController::class, 'update'])->name('frontend.profile');
 
-
+Route::get('/search', [SearchController::class,'search']);
 
 
 Auth::routes();

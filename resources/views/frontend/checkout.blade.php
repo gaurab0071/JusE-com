@@ -64,8 +64,8 @@
                         </div> --}}
                         </div>
                     </div>
-               
-                {{-- <div class="collapse mb-5" id="shipping-address">
+
+                    {{-- <div class="collapse mb-5" id="shipping-address">
                     <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Shipping
                             Address</span></h5>
                     <div class="bg-light p-30">
@@ -131,40 +131,81 @@
                         </div>
                     </div>
                 </div>
+
+                <!---------------------------------Payments------------------------------------>
                 {{-- <div class="mb-5">
                     <h5 class="section-title position-relative text-uppercase mb-3"><span
                             class="bg-secondary pr-3">Payment</span></h5>
                     <div class="bg-light p-30">
                         <div class="form-group">
                             <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="paypal">
-                                <label class="custom-control-label" for="paypal">Paypal</label>
+                                <input type="radio" class="custom-control-input" name="payment" id="esewa">
+                                <label class="custom-control-label" for="esewa">Esewa</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="directcheck">
-                                <label class="custom-control-label" for="directcheck">Direct Check</label>
+                                <input type="radio" class="custom-control-input" name="payment" id="khalti">
+                                <label class="custom-control-label" for="khalti">Khalti</label>
                             </div>
                         </div>
                         <div class="form-group mb-4">
                             <div class="custom-control custom-radio">
                                 <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
-                                <label class="custom-control-label" for="banktransfer">Bank Transfer</label>
+                                <label class="custom-control-label" for="cod">Cash On Delivery</label>
                             </div>
                         </div>
-                </div> --}}
-                @if (session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
+                        <div class="form-group mb-4" id="uploadSection">
+                            <input type="file" class="form-control-file" id="paymentScreenshot">
+                            <button type="button" class="btn btn-primary" id="uploadScreenshotButton">Upload Screenshot</button>
+                            
+                        </div>
                     </div>
-                @endif
+                </div> --}}
+                    <!---------------------------------Payments end------------------------------------>
 
-                <button type="submit" class="btn btn-block btn-primary font-weight-bold py-3">Place Order</button>
-                </form>
+                    <!-- Modal -->
+                    {{-- <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog"
+                        aria-labelledby="paymentModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="paymentModalLabel">Payment</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p id="paymentDescription">Please scan the QR code below to make your payment.</p>
+                                    <img id="qrCodeImage" src="" class="img-fluid" alt="Payment QR Code">
+                                    <hr>
+                                    <p>After making the payment, please upload a screenshot of your payment for
+                                        verification.</p>
+                                    <input type="file" class="form-control-file" id="paymentScreenshot">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" id="saveQrCodeButton">Save QR
+                                        Code</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                        <!--------------Modal End---------------------------------------------->
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                    <div id="cartEmptyError" class="alert alert-danger" style="display: none;">
+                        Your cart is empty. Please add items to your cart before placing an order.
+                    </div>
+                    <button type="submit" class="btn btn-block btn-primary font-weight-bold py-3">Place Order</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    </div>
     <!-- Checkout End -->
 @endsection
+

@@ -87,7 +87,6 @@ class PageController extends Controller
 {
     $categories = Category::all();
     $cartItems = [];
-    $totalCartItem = 0;
     $subtotal = 0;
     $shippingCharge = 150;
     $total = 0;
@@ -99,10 +98,9 @@ class PageController extends Controller
         $total = $subtotal + $shippingCharge;
     }
 
-    return view('frontend.cart', compact('totalCartItem', 'cartItems', 'categories', 'subtotal', 'shippingCharge', 'total'));
+    return view('frontend.cart', compact('cartItems', 'categories', 'subtotal', 'shippingCharge', 'total'));
     
 }
-
 
     public function shop()
     {

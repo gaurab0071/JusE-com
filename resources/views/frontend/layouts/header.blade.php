@@ -34,9 +34,9 @@
         </div>
 
         <div class="col-lg-4 col-6 text-left">
-            <form action="">
+            <form action="/header" method="GET">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for products">
+                    <input type="text" class="form-control" type="search" placeholder="Search for products" value="{{ request('name')}}" name="name" id="searchInput" aria-label="Search">
                     <div class="input-group-append">
                         <span class="input-group-text bg-transparent text-primary">
                             <i class="fa fa-search"></i>
